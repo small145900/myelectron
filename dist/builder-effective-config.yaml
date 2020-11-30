@@ -1,0 +1,19 @@
+directories:
+  output: /Users/small/Documents/xuetang/myelectron/dist/electron/Packaged
+  buildResources: /Users/small/Documents/xuetang/myelectron/src-electron
+  app: /Users/small/Documents/xuetang/myelectron/dist/electron/UnPackaged
+appId: ace-editor
+productName: small app
+publish:
+  - provider: generic
+    url: 'https://github.com/small145900/myelectron/tree/master/dist/'
+nsis:
+  oneClick: true
+  perMachine: true
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  runAfterFinish: true
+  installerIcon: ./build/icon.ico
+  uninstallerIcon: ./build/icon.ico
+electronVersion: 9.3.4
