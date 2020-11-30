@@ -197,7 +197,7 @@ module.exports = configure(function (ctx) {
         publish: [
           {
             provider: 'generic',
-            url: 'http://git.sys.xuetangx.info/wuxiaoxiao/apitest.git/' // 更新服务器地址
+            url: 'https://github.com/small145900/myelectron/tree/master/dist/' // 更新服务器地址
             // url: 'http://127.0.0.1:4000/download/' // 更新服务器地址
           }
         ],
