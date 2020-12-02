@@ -79,7 +79,7 @@ function updateHandle() {
     // autoUpdater.updateConfigPath = path.join(__dirname, 'win-unpacked/resources/app-update.yml')
   }
   
-  autoUpdater.setFeedURL(uploadUrl);
+  // autoUpdater.setFeedURL(uploadUrl);
   
   autoUpdater.on('error', function (error) {
     sendUpdateMessage(message.error)

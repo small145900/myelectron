@@ -188,21 +188,25 @@ module.exports = configure(function (ctx) {
         // Windows only
         // win32metadata: { ... }
       },
-
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/small145900/myelectron.git"
+      },
       builder: {
         // https://www.electron.build/configuration/configuration
 
         appId: 'ace-editor',
         productName: 'small app',
         publish: [
-          {
-            provider: 'github',
-            repo: 'myelectron',
-            own: 'small145900'
+          'github'
+          // {
+          //   provider: 'github',
+          //   repo: 'myelectron',
+          //   own: 'small145900'
             // provider: 'generic',
             // url: 'https://github.com/small145900/myelectron/tree/master/dist/' // 更新服务器地址
             // url: 'http://127.0.0.1:4000/download/' // 更新服务器地址
-          }
+          // }
         ],
         "nsis": {
           "oneClick": true,
