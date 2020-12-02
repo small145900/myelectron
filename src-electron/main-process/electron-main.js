@@ -2,6 +2,7 @@ import { app, BrowserWindow, nativeTheme, ipcMain } from 'electron'
 
 import { autoUpdater } from 'electron-updater'
 const os = require('os');
+// const fs = require('fs-extra')
 const path = require('path');
 const log = require('electron-log')
 const packageInfo = require('../../package.json');
@@ -78,8 +79,13 @@ function updateHandle() {
     // autoUpdater.updateConfigPath = path.join(__dirname, 'Contents/Resources/app-update.yml')
     // autoUpdater.updateConfigPath = path.join(__dirname, 'win-unpacked/resources/app-update.yml')
   }
+
+  // 更新前，删除本地安装包
+// let updaterCacheDirName = 'ace-editor'
+// const updatePendingPath = path.join(autoUpdater.app.baseCachePath, updaterCacheDirName, 'pending')
+// fs.emptyDir(updatePendingPath)
   
-  // autoUpdater.setFeedURL(uploadUrl);
+  autoUpdater.setFeedURL(uploadUrl);
   
   autoUpdater.on('error', function (error) {
     sendUpdateMessage(message.error)
