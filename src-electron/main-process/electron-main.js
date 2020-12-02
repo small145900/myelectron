@@ -12,7 +12,7 @@ const packageInfo = require('../../package.json');
 
 const isMac = process.platform === 'darwin'
 // const uploadUrl = 'http://127.0.0.1:4000/download/' // 更新服务器地址
-const uploadUrl = 'https://github.com/small145900/myelectron/tree/master/dist/' // 更新服务器地址
+const uploadUrl = 'https://github.com/small145900/myelectron/releases/latest/download/' // 更新服务器地址
 
 try {
   if (process.platform === 'win32' && nativeTheme.shouldUseDarkColors === true) {
@@ -80,6 +80,7 @@ function updateHandle() {
   }
   
   autoUpdater.setFeedURL(uploadUrl);
+  
   autoUpdater.on('error', function (error) {
     sendUpdateMessage(message.error)
   });

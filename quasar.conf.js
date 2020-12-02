@@ -196,8 +196,11 @@ module.exports = configure(function (ctx) {
         productName: 'small app',
         publish: [
           {
-            provider: 'generic',
-            url: 'https://github.com/small145900/myelectron/tree/master/dist/' // 更新服务器地址
+            provider: 'github',
+            repo: 'myelectron',
+            own: 'small145900'
+            // provider: 'generic',
+            // url: 'https://github.com/small145900/myelectron/tree/master/dist/' // 更新服务器地址
             // url: 'http://127.0.0.1:4000/download/' // 更新服务器地址
           }
         ],
