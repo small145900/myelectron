@@ -6,6 +6,7 @@ const os = require('os');
 const path = require('path');
 const log = require('electron-log')
 const packageInfo = require('../../package.json');
+const updater = require('update-electron-app')
 
 // log.transports.file.level = false
 // log.transports.console.level = false
@@ -13,7 +14,7 @@ const packageInfo = require('../../package.json');
 
 const isMac = process.platform === 'darwin'
 // const uploadUrl = 'http://127.0.0.1:4000/download/' // 更新服务器地址
-const uploadUrl = 'https://github.com/small145900/myelectron/releases/latest/download/' // 更新服务器地址
+// const uploadUrl = 'https://github.com/small145900/myelectron/releases/latest/download/' // 更新服务器地址
 
 try {
   if (process.platform === 'win32' && nativeTheme.shouldUseDarkColors === true) {
@@ -58,7 +59,8 @@ function createWindow () {
 
   mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.webContents.send('version', packageInfo.version)
-    updateHandle();
+    // updateHandle();
+    updater();
   })
 
 }
